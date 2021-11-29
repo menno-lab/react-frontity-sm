@@ -8,6 +8,7 @@ const Header = ({ state }) => {
     <>
       <Container>
         <StyledLink link="/">
+        <img src="https://toppng.com/uploads/preview/dog-paw-print-png-dog-paw-11563597387zsw1pcwdge.png" alt="new" height="50px"/>
           <Title>{state.frontity.title}</Title>
         </StyledLink>
         <Description>{state.frontity.description}</Description>
@@ -25,11 +26,8 @@ const Container = styled.div`
   width: 848px;
   max-width: 100%;
   box-sizing: border-box;
-  padding: 24px;
+  padding: 14px;
   color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
 `;
 
 const Title = styled.h2`
@@ -45,3 +43,15 @@ const Description = styled.h4`
 const StyledLink = styled(Link)`
   text-decoration: none;
 `;
+
+
+// const Container = styled.div`
+//   width: 848px;
+//   max-width: 100%;
+//   box-sizing: border-box;
+//   padding: 24px;
+//   color: #fff;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-around;
+// `;

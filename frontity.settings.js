@@ -3,8 +3,7 @@ const settings = {
   "state": {
     "frontity": {
       "url": "https://test.frontity.org",
-      "title": "Test Frontity Blog",
-      "description": "WordPress installation for Frontity development"
+      "title": "Tindog"
     }
   },
   "packages": [
@@ -18,21 +17,13 @@ const settings = {
               "/"
             ],
             [
-              "Nature",
-              "/category/nature/"
+              "Products",
+              "/products/"
             ],
             [
-              "Travel",
-              "/category/travel/"
+              "Blog",
+              "/blog/"
             ],
-            [
-              "Japan",
-              "/tag/japan/"
-            ],
-            [
-              "About Us",
-              "/about-us/"
-            ]
           ],
           "featured": {
             "showOnList": false,
@@ -45,7 +36,9 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://test.frontity.org"
+          "url": "https://menno942651544.wordpress.com/",
+          "homepage": "/home",
+          "postsPage": "/blog"
         }
       }
     },
