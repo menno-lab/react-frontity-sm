@@ -7,6 +7,8 @@ import Loading from "./loading";
 import Title from "./title";
 import PageError from "./page-error";
 import Footer from "./footer";
+import ListProducts from "./list-records";
+import Product from "./product";
 
 /**
  * Theme is the root React component of our theme. The one we will export
@@ -19,6 +21,8 @@ import Footer from "./footer";
 const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
+
+  console.log(data);
 
   return (
     <>
@@ -43,14 +47,14 @@ const Theme = ({ state }) => {
       <Main>
         <Switch>
           <Loading when={data.isFetching} />
+          <ListProducts when={data.isProductArchive} />
+          <Product when={data.isProducts} />
           <List when={data.isArchive} />
           <Post when={data.isPostType} />
           <PageError when={data.isError} />
         </Switch>
       </Main>
-
       <Footer />
-
     </>
   );
 };

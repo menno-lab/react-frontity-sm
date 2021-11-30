@@ -2,16 +2,17 @@ import { connect, styled } from "frontity";
 import Link from "./link";
 import Nav from "./nav";
 import MobileMenu from "./menu";
+import logo from './logo.png';
+
 
 const Header = ({ state }) => {
   return (
     <>
       <Container>
         <StyledLink link="/">
-        <img src="https://toppng.com/uploads/preview/dog-paw-print-png-dog-paw-11563597387zsw1pcwdge.png" alt="new" height="50px"/>
+          <img src={logo} alt="new" height="60px" style={{float: "left", marginRight: "20px"}}/>
           <Title>{state.frontity.title}</Title>
         </StyledLink>
-        <Description>{state.frontity.description}</Description>
         <MobileMenu />
       </Container>
       <Nav />
@@ -33,6 +34,8 @@ const Container = styled.div`
 const Title = styled.h2`
   margin: 0;
   margin-bottom: 16px;
+  line-height: 60px;
+  font-size: 40px;
 `;
 
 const Description = styled.h4`
