@@ -1,4 +1,7 @@
-# smchallenge
+# Supermetrics Challenge
+
+Production Build at https://smchallenge.vercel.app/
+
 
 This project was bootstrapped with [Frontity](https://frontity.org/).
 
