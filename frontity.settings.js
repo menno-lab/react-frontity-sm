@@ -36,8 +36,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          // using ngrok to set up tunnel to localhost
-          "api": "https://9d59-2001-14ba-4c6f-5c00-7053-3760-8b97-cb98.ngrok.io/wordpress/wp-json",
+          "api": "https://frontity-assignment-8bb451.ingress-erytho.easywp.com/wp-json",
           "postTypes": [
             {
               type: "product",
@@ -45,12 +44,6 @@ const settings = {
               archive: "/products"
             }
           ],
-          // taxonomies: [
-          //   {
-          //     taxonomy: "products",
-          //     endpoint: "products"
-          //   }
-          // ],
           "homepage": "/home",
           "postsPage": "/blog"
         }

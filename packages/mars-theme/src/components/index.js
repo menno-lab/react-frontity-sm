@@ -7,8 +7,9 @@ import Loading from "./loading";
 import Title from "./title";
 import PageError from "./page-error";
 import Footer from "./footer";
-import ListProducts from "./list-records";
+import ListProducts from "./list-products";
 import Product from "./product";
+import Home from "./home";
 
 /**
  * Theme is the root React component of our theme. The one we will export
@@ -21,8 +22,6 @@ import Product from "./product";
 const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
-
-  console.log(data);
 
   return (
     <>
@@ -47,14 +46,16 @@ const Theme = ({ state }) => {
       <Main>
         <Switch>
           <Loading when={data.isFetching} />
+          <Home when={data.isHome} />
           <ListProducts when={data.isProductArchive} />
           <Product when={data.isProducts} />
           <List when={data.isArchive} />
           <Post when={data.isPostType} />
-          <PageError when={data.isError} />
+          {/* <PageError when={data.isError} /> */}
         </Switch>
       </Main>
       <Footer />
+      
     </>
   );
 };
@@ -81,17 +82,11 @@ const HeadContainer = styled.div`
   padding: 0 10%;
 `;
 
-// const HeadContainer = styled.div`
-//   display: flex;
-//   align-items: center;
-//   flex-direction: column;
-//   background-color: #1f38c5;
-// `;
-
-
 const Main = styled.div`
   display: flex;
   justify-content: center;
+  
+  min-height: 90vh;
   background-image: linear-gradient(
     180deg,
     rgba(66, 174, 228, 0.1),

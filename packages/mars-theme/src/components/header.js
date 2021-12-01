@@ -4,7 +4,6 @@ import Nav from "./nav";
 import MobileMenu from "./menu";
 import logo from './logo.png';
 
-
 const Header = ({ state }) => {
   return (
     <>
@@ -38,23 +37,6 @@ const Title = styled.h2`
   font-size: 40px;
 `;
 
-const Description = styled.h4`
-  margin: 0;
-  color: rgba(255, 255, 255, 0.7);
-`;
-
 const StyledLink = styled(Link)`
   text-decoration: none;
 `;
-
-
-// const Container = styled.div`
-//   width: 848px;
-//   max-width: 100%;
-//   box-sizing: border-box;
-//   padding: 24px;
-//   color: #fff;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-around;
-// `;

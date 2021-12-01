@@ -13,52 +13,53 @@ import FeaturedMedia from "../featured-media";
 const Item = ({ state, item }) => {
   const author = state.source.author[item.author];
   const date = new Date(item.date);
+  // Frontity's approach to use the Excerpt includes a link to the wordpress page, taking a manual approach
+  const preview = item.content.rendered.substring(0,300) + "...";
 
   return (
-    <article>
+    <Article>
       <Link link={item.link}>
         <Title dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
-      </Link>
+      
 
       <div>
         {/* If the post has an author, we render a clickable author text. */}
         {author && (
-          <StyledLink link={author.link}>
+        
             <AuthorName>
               By <b>{author.name}</b>
             </AuthorName>
-          </StyledLink>
+        
         )}
+
         <PublishDate>
           {" "}
           on <b>{date.toDateString()}</b>
         </PublishDate>
+        <PeviewSection>
+          <span>{preview}</span>
+        </PeviewSection>
       </div>
-
-      {/*
-       * If the want to show featured media in the
-       * list of featured posts, we render the media.
-       */}
-      {state.theme.featured.showOnList && (
-        <FeaturedMedia id={item.featured_media} />
-      )}
-
-      {/* If the post has an excerpt (short summary text), we render it */}
-      {item.excerpt && (
-        <Excerpt dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }} />
-      )}
-    </article>
+    </Link>
+    </Article>
   );
 };
 
 // Connect the Item to gain access to `state` as a prop
 export default connect(Item);
 
+const Article = styled.article`
+  border: 2px solid black;
+  padding: 10px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+`;
+
 const Title = styled.h1`
   font-size: 2rem;
   color: rgba(12, 17, 43);
   margin: 0;
-  padding-top: 24px;
+  padding-top: 10px;
   padding-bottom: 8px;
   box-sizing: border-box;
 `;
@@ -68,16 +69,14 @@ const AuthorName = styled.span`
   font-size: 0.9em;
 `;
 
-const StyledLink = styled(Link)`
-  padding: 15px 0;
-`;
-
 const PublishDate = styled.span`
   color: rgba(12, 17, 43, 0.9);
   font-size: 0.9em;
 `;
 
-const Excerpt = styled.div`
+const PeviewSection = styled.div`
   line-height: 1.6em;
   color: rgba(12, 17, 43, 0.8);
+  font-size: 0.9rem;
+  padding-top: 10px;
 `;

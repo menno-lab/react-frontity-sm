@@ -1,14 +1,11 @@
 import React from "react";
-import { FaInstagram, FaFacebookSquare, FaTwitter } from "react-icons/fa";
-
+import { FaInstagram, FaFacebookSquare, FaTwitter, FaHeart, FaCoffee } from "react-icons/fa";
 
 const footerStyle = {
     backgroundColor: "#F8F8F8",
     borderTop: "1px solid #E7E7E7",
     textAlign: "center",
-    position: "fixed",
-    left: "0",
-    bottom: "0",
+  
     width: "100%",
 }
 
@@ -37,7 +34,7 @@ function Footer() {
                 <li style={social}><FaTwitter /></li>
             </ul>
             <ul >
-                <li style={footerLi}>Made with ♥ in Finland</li>
+                <li style={footerLi}>Made with <FaHeart /> and <FaCoffee /> in Finland</li>
                 <li style={footerLi}>Terms of service</li>
                 <li style={footerLi}>Privacy Policy</li>
             </ul>
