@@ -71,4 +71,6 @@ const DescriptionSection = styled.div`
 
 const Img = styled.img`
   width: 60vw;
+  max-width: 500px;
+  margin-top: 20px;
 `;

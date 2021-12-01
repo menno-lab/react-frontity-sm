@@ -9,12 +9,11 @@ const Item = ({ name, product_logo, description, price, link, headline }) => {
       <Link link={link}>
         <Title>{name}</Title>
         <Price>€{price}/mo</Price>
-        <SubTitleSection>
-          <SubTitle>{headline}</SubTitle>
-        </SubTitleSection>
+        <SubTitle>{headline}</SubTitle>
+        <Button>Learn More</Button> 
         <ImgSection>
          <Img src={product_logo} alt="prod_logo"/>
-        </ImgSection>        
+        </ImgSection>
       </Link>
     </Article>
   );
@@ -29,12 +28,16 @@ const Article = styled.article`
   justify-content: center;
   width: 75%; 
   height: 70vh;
+  max-height: 600px;
   border: 3px solid black;
   border-radius: 10px;
   padding: 0 20px;
   text-align: center;
   margin: auto;
-  margin-bottom: 50px;
+  @media screen and (max-width: 900px) {
+    margin-bottom: 20px;
+    padding-bottom: 40px;
+  }
 `;
 
 const Title = styled.h1`
@@ -45,21 +48,27 @@ const Title = styled.h1`
   padding-bottom: 8px;
 `;
 
-
 const Price = styled.h3`
-  font-size: 1rem;
+  font-size: 1.3rem;
   color: black;
   padding: 20px;
   font-size: 1.2rem;
 `;
 
-const SubTitleSection = styled.div`
-  height: 20%;
+const Button = styled.button`
+  margin-bottom: 20px;
+  padding: 8px 30px;
+  color: white;
+  background-color: black;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
 `;
 
 const ImgSection = styled.div`
   width: 100%;
- 
 `;
 
 const Img = styled.img`
@@ -72,5 +81,5 @@ const SubTitle = styled.h3`
   font-size: 1.2rem;
   color: #FF2E63;
   margin: 0;
-  padding-bottom: 8px;
+  padding-bottom: 15px;
 `;

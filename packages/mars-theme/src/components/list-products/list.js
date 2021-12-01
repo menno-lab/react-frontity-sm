@@ -8,7 +8,6 @@ const List = ({ state }) => {
 
   return (
     <Container>
-
       {/* Iterate over the items of the list. */}
       {data.items.map(({ type, id }) => {
         const item = state.source[type][id];
@@ -43,6 +42,8 @@ const Container = styled.section`
     grid-gap: 20px;
     align-items: center;
     padding: 50px 20px;
+    max-width: 1600px;
+    
   }
   @media screen and (max-width: 900px) {
     padding: 50px 0;
